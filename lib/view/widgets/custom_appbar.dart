@@ -18,42 +18,27 @@ class _CustomAppbrState extends State<CustomAppbr> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            width: 40,
-            height: 40,
-            decoration: BoxDecoration(
+          ClipOval(
+              child: Container(
+            width: 50,
+            height: 50,
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: controller.getThemeFromBox()
-                  ? Colors.black
-                  : Colors.grey.shade300,
-              border: Border.all(color: Colors.black, width: 3),
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 8,
-                  color: Colors.white.withOpacity(0.2),
-                  offset: const Offset(2, 2),
-                ),
-                BoxShadow(
-                  blurRadius: 10,
-                  color: Colors.white.withOpacity(0.2),
-                  offset: const Offset(-2, -2),
-                ),
-              ],
             ),
-            child: const Icon(
-              Icons.trending_up_outlined,
+            child: Image.asset(
+              'assets/images/profile.png',
+              fit: BoxFit.contain,
             ),
-          ),
+          ),),
           GetBuilder<TaskController>(
             builder: (controller) => Container(
               child: Row(
                 children: [
                   GestureDetector(
                     onTap: () {
-                      print('prresed');
                       controller.switchTheme();
                     },
-                    child: Icon(
+                    child:  Icon(
                       size: 25,
                       Icons.dark_mode_outlined,
                     ),
@@ -63,7 +48,9 @@ class _CustomAppbrState extends State<CustomAppbr> {
                     onTap: () {
                       Get.defaultDialog(
                         title: 'Delete All Tasks',
-                        titleStyle:controller.getThemeFromBox()? TextStyle(color: Colors.white):TextStyle(color: Colors.black),
+                        titleStyle: controller.getThemeFromBox()
+                            ? const TextStyle(color: Colors.white)
+                            : const TextStyle(color: Colors.black),
                         backgroundColor: controller.getThemeFromBox()
                             ? Colors.grey.shade900
                             : Colors.grey.shade500,
@@ -85,6 +72,7 @@ class _CustomAppbrState extends State<CustomAppbr> {
                     child: Icon(
                       size: 25,
                       Icons.clear,
+                      color: Colors.red.shade900,
                     ),
                   ),
                 ],

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo/controller/taske_controller.dart';
-import 'custom_text.dart';
 
 class CustomActions extends StatelessWidget {
   TaskController controller = Get.find();
-  var yesAction;
-  var noAction;
+  dynamic yesAction;
+  dynamic noAction;
   CustomActions({
     Key? key,
     required this.yesAction,

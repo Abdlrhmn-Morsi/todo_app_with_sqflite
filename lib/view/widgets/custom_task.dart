@@ -52,8 +52,8 @@ class CustomTaske extends StatelessWidget {
             Get.defaultDialog(
               title: 'Delete Task',
               titleStyle: controller.getThemeFromBox()
-                  ? TextStyle(color: Colors.white)
-                  : TextStyle(color: Colors.black),
+                  ? const TextStyle(color: Colors.white)
+                  : const TextStyle(color: Colors.black),
               backgroundColor: controller.getThemeFromBox()
                   ? Colors.grey.shade900
                   : Colors.grey.shade500,

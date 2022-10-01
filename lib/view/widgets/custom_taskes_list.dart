@@ -14,22 +14,24 @@ class CustomTaskesList extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.only(top: 15),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(45),
               color: controller.getThemeFromBox()
-                  ? Colors.black
+                  ? Colors.grey.shade900
                   : Colors.grey.shade300,
-              border: Border.all(color: Colors.black, width: 3),
+              border: Border.all(color: Colors.grey.shade900, width: 2),
               boxShadow: [
                 BoxShadow(
                   blurRadius: 8,
                   color: controller.getThemeFromBox()
-                      ? Colors.grey.shade900
-                      : Colors.white.withOpacity(0.2),
+                      ? Colors.grey.shade700
+                      :  Colors.grey.shade400,
                   offset: const Offset(5, 5),
                 ),
                 BoxShadow(
                   blurRadius: 10,
-                  color: Colors.white.withOpacity(0.2),
+                  color: controller.getThemeFromBox()
+                      ? Colors.grey.shade700
+                      :  Colors.grey.shade400,
                   offset: const Offset(-5, -5),
                 ),
               ]),

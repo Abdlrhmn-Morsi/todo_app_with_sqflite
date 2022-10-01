@@ -12,7 +12,7 @@ class addTask extends StatelessWidget {
 
     return GetBuilder<TaskController>(
       builder: (controller) => Container(
-        height: 200,
+        height: 183,
         decoration: BoxDecoration(
           color: controller.getThemeFromBox()
               ? Colors.grey.shade900
@@ -31,16 +31,25 @@ class addTask extends StatelessWidget {
                 ),
               ),
               TextField(
-                style: const TextStyle(color: Colors.white, fontSize: 22),
+                style: TextStyle(
+                    color: controller.getThemeFromBox()
+                        ? Colors.white
+                        : Colors.black,
+                    fontSize: 22),
                 controller: controller.titleController,
                 autofocus: true,
                 cursorColor: Colors.white,
                 textAlign: TextAlign.center,
-                decoration: InputDecoration(),
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.white),
+                style: TextButton.styleFrom(
+                    backgroundColor: controller.getThemeFromBox()
+                        ? Colors.grey.shade700
+                        : Colors.grey.shade100),
                 onPressed: () {
                   if (controller.titleController.text.isEmpty) {
                     Get.snackbar(
@@ -51,12 +60,9 @@ class addTask extends StatelessWidget {
                     controller.addTaskController();
                     Navigator.of(context).pop();
                   }
-
-                  print(('${controller.taskes.length} =======length====='));
                 },
                 child: CustomText(
                   text: 'Add',
-                 
                 ),
               )
             ],

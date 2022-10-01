@@ -16,25 +16,25 @@ class HomeView extends StatelessWidget {
     return GetBuilder<TaskController>(
       builder: (controller) => Scaffold(
         backgroundColor:
-            controller.getThemeFromBox() ? Colors.black : Colors.grey.shade200,
+            controller.getThemeFromBox() ? Colors.grey.shade900 : Colors.grey.shade200,
         body: Container(
           padding: const EdgeInsets.only(left: 20, right: 20, bottom: 40),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 80),
+              const SizedBox(height: 60),
               CustomAppbr(),
               const SizedBox(height: 15),
               Row(
                 children: [
                   Container(
-                    width: 40,
-                    height: 40,
+                    width: 35,
+                    height: 35,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       color: controller.getThemeFromBox()
-                          ? Colors.black
+                          ?  Colors.grey.shade900
                           : Colors.grey.shade300,
                       shape: BoxShape.circle,
                       border: Border.all(color: Colors.black, width: 3),
@@ -67,12 +67,12 @@ class HomeView extends StatelessWidget {
                           }
                           return CustomText(
                             text: '${snapshot.data!.length}',
-                            fontSize: 20,
+                            fontSize: 16,
                           );
                         }),
                   ),
                   const SizedBox(width: 10),
-                  CustomText(text: 'Taskes', fontSize: 22),
+                  CustomText(text: 'Taskes', fontSize: 20),
                 ],
               ),
               const SizedBox(height: 15),

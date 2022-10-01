@@ -47,7 +47,11 @@ class EditeTask extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.white),
+                style: TextButton.styleFrom(
+                  backgroundColor: controller.getThemeFromBox()
+                      ? Colors.grey.shade700
+                      : Colors.grey.shade100,
+                ),
                 onPressed: () {
                   controller.editeTaske(id);
                   Navigator.of(context).pop();
